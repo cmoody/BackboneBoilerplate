@@ -1,0 +1,18 @@
+To DO
+= General
+ - Extend Default View to add event for title
+ - Integrate hammerjs
+
+= Build
+ - Add requirejs build
+ - Conditional HTML stuff
+
+= Nav
+ - User profile in nav
+ - Nav link styles
+ - Animation for profile/links when nav open
+
+= Page Transition
+ - Add to viewHandler
+ - Add transition in/out
+ - Keep copy of view to prevent rerendering
