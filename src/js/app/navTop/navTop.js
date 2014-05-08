@@ -21,8 +21,8 @@ define(function (require) {
         className: '',
 
         events: {
-            'tap .navbtn': 'navSlide',
-            'tap .list a': 'navSlide'
+            'click .navbtn': 'navSlide',
+            'click .list a': 'navSlide'
         },
 
         initialize: function() {

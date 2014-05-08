@@ -1,11 +1,11 @@
 To DO
 = General
- - Extend Default View to add event for title
- - Integrate hammerjs
+ - Extend Default View to add event for title as property if none passed default to ''
+ - Integrate hammerjs (May require extending default view)
 
 = Build
  - Add requirejs build
- - Conditional HTML stuff
+ - Conditional HTML stuff (Maybe see notes)
 
 = Nav
  - User profile in nav
@@ -16,3 +16,7 @@ To DO
  - Add to viewHandler
  - Add transition in/out
  - Keep copy of view to prevent rerendering
+
+
+ Notes
+ Might not need to add conditional html since running connect on build folder just keep name the same almond would use require style script tags etc

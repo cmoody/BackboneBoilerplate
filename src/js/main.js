@@ -4,12 +4,14 @@ require.config({
 	 	'jquery': 'jquery/dist/jquery.min',
 	    'backbone': 'backbone/backbone',
 	    'underscore': 'underscore/underscore',
-	    'hammer': 'hammerjs/hammer.min',
+	    'hammerjs': 'hammerjs/hammer.min',
+	    'hammer-jquery': 'jquery-hammerjs/jquery.hammer.min',
         "text" : "requirejs-text/text",
 	    'app': '../app',
         'libs': '../libs'
     },
 	shim: {
+
 	}
 });
 
