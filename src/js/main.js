@@ -1,14 +1,13 @@
 require.config({
-	baseUrl: 'js/vendor',
 	paths: {
-	 	'jquery': 'jquery/dist/jquery.min',
-	    'backbone': 'backbone/backbone',
-	    'underscore': 'underscore/underscore',
-	    'hammerjs': 'hammerjs/hammer.min',
-	    'hammer-jquery': 'jquery-hammerjs/jquery.hammer.min',
-        "text" : "requirejs-text/text",
-	    'app': '../app',
-        'libs': '../libs'
+	 	'jquery': 'vendor/jquery/dist/jquery.min',
+	    'backbone': 'vendor/backbone/backbone',
+	    'underscore': 'vendor/underscore/underscore',
+	    'hammerjs': 'vendor/hammerjs/hammer.min',
+	    'hammer-jquery': 'vendor/jquery-hammerjs/jquery.hammer.min',
+        'text' : 'vendor/requirejs-text/text',
+	    'app': 'app',
+        'libs': 'libs'
     },
 	shim: {
 

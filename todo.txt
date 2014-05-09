@@ -4,7 +4,6 @@ To DO
  - Integrate hammerjs (May require extending default view)
 
 = Build
- - Add requirejs build
  - Conditional HTML stuff (Maybe see notes)
 
 = Nav

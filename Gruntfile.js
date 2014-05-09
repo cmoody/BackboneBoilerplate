@@ -41,16 +41,20 @@ module.exports = function(grunt) {
       }
     },
 
-    // requirejs: {
-    //   compile: {
-    //     options: {
-    //       baseUrl: "path/to/base",
-    //       mainConfigFile: "path/to/config.js",
-    //       name: "path/to/almond", // assumes a production build using almond
-    //       out: "path/to/optimized.js"
-    //     }
-    //   }
-    // },
+    requirejs: {
+      compile: {
+        options: {
+          almond: true,
+          keepBuildDir: true,
+          baseUrl: "./src/js",
+          include: ['main.js'],
+          mainConfigFile: "./src/js/main.js",
+          name: "vendor/almond/almond", // assumes a production build using almond
+          out: "build/optimized.js",
+          wrap: true
+        }
+      }
+    },
 
     copy: {
       main: {
