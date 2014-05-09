@@ -3,10 +3,8 @@ To DO
  - Extend Default View to add event for title as property if none passed default to ''
  - Integrate hammerjs (May require extending default view)
 
-= Build
- - Conditional HTML stuff (Maybe see notes)
-
 = Nav
+ - Trigger for deep link with childview < swap with =
  - User profile in nav
  - Nav link styles
  - Animation for profile/links when nav open
@@ -15,7 +13,6 @@ To DO
  - Add to viewHandler
  - Add transition in/out
  - Keep copy of view to prevent rerendering
-
 
  Notes
  Might not need to add conditional html since running connect on build folder just keep name the same almond would use require style script tags etc

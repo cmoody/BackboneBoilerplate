@@ -15,10 +15,27 @@ define(function(require) {
 		}
 	};
 
+	Backbone.View.prototype.onEnter = function() {
+
+	};
+
+	Backbone.View.prototype.onExit = function() {
+		// this.pageTransition.out
+	};
+
+	Backbone.View.prototype.pageTransition = {
+      'in': '',
+      'out': '',
+      'inReverse': '',
+      'outReverse': ''
+    };
+
   	var ViewHandler = {
 
   		setCurrent: function(view) {
-
+  			// Call property on view for in/out
+  			// currentView.onExit then on complete close
+  			// view.onEnter
 			if (currentView){
 				currentView.close();
 			}
