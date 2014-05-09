@@ -50,7 +50,7 @@ module.exports = function(grunt) {
           include: ['main.js'],
           mainConfigFile: "./src/js/main.js",
           name: "vendor/almond/almond", // assumes a production build using almond
-          out: "build/optimized.js",
+          out: "build/js/app.js",
           wrap: true
         }
       }
@@ -63,8 +63,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: './src',
             src: [
-              'index.html',
-              'config.xml',
+              //'index.html',
               'assets/**/*',
               'js/**/*',
               '!css/**/*'
@@ -84,6 +83,27 @@ module.exports = function(grunt) {
             dest: './Cordova/www'
           }
         ]
+      }
+    },
+
+    preprocess : {
+      prod : {
+        src : 'src/index.html',
+        dest : 'build/index.html',
+        options: {
+          context : {
+            PROD: true
+          }
+        }
+      },
+      dev : {
+        src : 'src/index.html',
+        dest : 'build/index.html',
+        options: {
+          context : {
+            DEV: true
+          }
+        }
       }
     },
 
@@ -117,11 +137,11 @@ module.exports = function(grunt) {
       }
     },
 
-    shell: {
-        cordova: {
-            command: 'cd Cordova && cordova build ios'
-        }
-    }
+    // shell: {
+    //     cordova: {
+    //         command: 'cd Cordova && cordova build ios'
+    //     }
+    // }
 
   });
 
@@ -130,18 +150,19 @@ module.exports = function(grunt) {
     'clean:build',
     'less:development',
     'copy:main',
+    'preprocess:dev',
     'connect:dev',
     'watch'
   ]);
 
-  // Build & Move to Cordova Folder
-  grunt.registerTask('build', [
+  // Run for Production
+  grunt.registerTask('prod', [
     'clean',
     'less:production',
-    // requirejs
-    // html conditional
-    'copy',
-    'shell:cordova'
+    'requirejs',
+    'preprocess:prod',
+    'copy:build',
+    //'shell:cordova'
   ]);
 
   // Run prod task and build ipa send to testflight

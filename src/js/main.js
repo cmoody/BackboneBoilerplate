@@ -9,9 +9,7 @@ require.config({
 	    'app': 'app',
         'libs': 'libs'
     },
-	shim: {
-
-	}
+	shim: {}
 });
 
 require([
