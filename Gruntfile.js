@@ -4,7 +4,6 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  // Project configuration.
   grunt.initConfig({
 
     connect: {
@@ -49,7 +48,7 @@ module.exports = function(grunt) {
           baseUrl: "./src/js",
           include: ['main.js'],
           mainConfigFile: "./src/js/main.js",
-          name: "vendor/almond/almond", // assumes a production build using almond
+          name: "vendor/almond/almond",
           out: "build/js/app.js",
           wrap: true
         }
@@ -63,7 +62,6 @@ module.exports = function(grunt) {
             expand: true,
             cwd: './src',
             src: [
-              //'index.html',
               'assets/**/*',
               'js/**/*',
               '!css/**/*'
@@ -107,10 +105,8 @@ module.exports = function(grunt) {
       }
     },
 
-    // Clean the build folder before
     clean: {
-      build: ['./build'],
-      cordova: ['./Cordova/www']
+      build: ['./build']
     },
 
     watch: {
@@ -137,11 +133,15 @@ module.exports = function(grunt) {
       }
     },
 
-    // shell: {
-    //     cordova: {
-    //         command: 'cd Cordova && cordova build ios'
-    //     }
-    // }
+    // Expand to pass in : param
+    shell: {
+        cordova: {
+          command: 'cd Cordova && cordova build ios'
+        },
+        ipa: {
+          command: ''
+        }
+    }
 
   });
 
@@ -161,15 +161,15 @@ module.exports = function(grunt) {
     'less:production',
     'requirejs',
     'preprocess:prod',
-    'copy:build',
-    //'shell:cordova'
+    'copy:build'
   ]);
 
-  // Run prod task and build ipa send to testflight
+  // Run prod task, build ipa, send to testflight
   grunt.registerTask('distribute', [
-    'build',
+    'prod',
+    'shell:cordova',
     //'shell:ipa' // Run Xcode build command to generate ipa
-    // testflight
+    //'testflight'
   ]);
 
 };
