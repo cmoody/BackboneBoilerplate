@@ -6,11 +6,11 @@ define(function(require) {
 	var Backbone = require('backbone');
 
 	// Template
-    var tpl = require('text!app/home/tpl/home.html');
+    var tpl = require('text!app/history/tpl/index.html');
     var template = _.template(tpl);
 	
 	return Backbone.View.extend({
-		className: 'home',
+		className: 'history',
 
 		initialize: function() {
 			this.render();

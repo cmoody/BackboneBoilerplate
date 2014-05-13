@@ -3,17 +3,20 @@ require.config({
 	 	'jquery': 'vendor/jquery/dist/jquery.min',
 	    'backbone': 'vendor/backbone/backbone',
 	    'underscore': 'vendor/underscore/underscore',
-	    //'hammerjs': 'vendor/hammerjs/hammer.min',
 	    'hammerjs': 'vendor/jquery-hammerjs/jquery.hammer-full.min',
+	    'velocity': 'vendor/velocity/jquery.velocity.min',
         'text' : 'vendor/requirejs-text/text',
 	    'app': 'app',
         'libs': 'libs'
     },
-	shim: {}
+	shim: {
+		'velocity': ['jquery']
+	}
 });
 
 require([
 	'app/router',
+	'velocity',
 	'libs/delegateEvents'
 ], function(Router) {
 
