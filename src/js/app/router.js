@@ -16,21 +16,20 @@ define(function(require) {
 
   // Views
   var NavTopView = require('app/navTop/navTop');
-  var CalculatorView = require('app/calculator/calculator');
-  var HistoryView = require('app/history/history');
-  var StatsView = require('app/stats/stats');
-  
+  var HomeView = require('app/home/home');
+
+  var Test1View = require('app/test1/test1');
+    
   return Backbone.Router.extend({
 
     routes: {
-		  '': 'calculator',
-      '/': 'calculator',
-      'history': 'history',
-      'stats': 'stats'
+		  '': 'index',
+      '/': 'index',
+      'test1': 'test1'
     },
 
     initialize: function() {
-      this.addTopNav();
+      this.addTopNav(); // If Auth needed move into viewHandler
     },
 
     addTopNav: function() {
@@ -40,28 +39,20 @@ define(function(require) {
         .prepend(navTopView.$el);
     },
 
-    calculator: function() {
-      var calculatorView = new CalculatorView();
+    index: function() {
+      var homeView = new HomeView();
 
-      stateEvents.trigger("update:title", "Calculator");
+      stateEvents.trigger("update:title", "Home");
 
-      ViewHandler.setCurrent(calculatorView);
+      ViewHandler.setCurrent(homeView);
     },
 
-    history: function() {
-      var historyView = new HistoryView();
+    test1: function() {
+      var test1View = new Test1View();
 
-      stateEvents.trigger("update:title", "History");
+      stateEvents.trigger("update:title", "Test 1");
 
-      ViewHandler.setCurrent(historyView);
-    },
-
-    stats: function() {
-      var statsView = new StatsView();
-
-      stateEvents.trigger("update:title", "Stats");
-
-      ViewHandler.setCurrent(statsView);
+      ViewHandler.setCurrent(test1View);
     }
 
   });

@@ -111,15 +111,8 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['./src/js/**/*'],
+        files: ['./src/index.html', './src/js/**/*'],
         tasks: ['copy:main'],
-        options: {
-          livereload: true
-        },
-      },
-      html: {
-        files: ['./src/index.html'],
-        tasks: ['preprocess:dev'],
         options: {
           livereload: true
         },

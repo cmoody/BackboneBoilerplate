@@ -1,5 +1,5 @@
-Tip Calculator
-==============
+Backbone Boilerplate
+====================
 
 # Getting Started
 ## Install Dependencies
