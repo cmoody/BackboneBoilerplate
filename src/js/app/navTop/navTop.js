@@ -22,7 +22,8 @@ define(function (require) {
 
         events: {
             'tap .navbtn': 'navSlide',
-            'tap .list a': 'navSlide'
+            'tap .list a': 'navSlide',
+            'tap .nav-closer': 'navSlide'
         },
 
         initialize: function() {
@@ -34,11 +35,11 @@ define(function (require) {
             this.render();
         },
 
-    	render: function() {
+        render: function() {
             this.$el.html(template());
 
             return this;
-    	},
+        },
         navSlide: function() {
             // Add in overlay to close on body click
             // Look into sliding this closed
