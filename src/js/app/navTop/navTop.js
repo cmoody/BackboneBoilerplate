@@ -35,11 +35,11 @@ define(function (require) {
             this.render();
         },
 
-    	render: function() {
+        render: function() {
             this.$el.html(template());
 
             return this;
-    	},
+        },
         navSlide: function() {
             // Add in overlay to close on body click
             // Look into sliding this closed
