@@ -22,8 +22,7 @@ define(function (require) {
 
         events: {
             'tap .navbtn': 'navSlide',
-            'tap .list a': 'navSlide',
-            'tap .nav-closer': 'navSlide'
+            'tap .list a': 'navSlide'
         },
 
         initialize: function() {
@@ -40,11 +39,12 @@ define(function (require) {
 
             return this;
         },
+
         navSlide: function() {
             // Add in overlay to close on body click
             // Look into sliding this closed
             $body.toggleClass('open');
-        },
+        }
 
     });
 

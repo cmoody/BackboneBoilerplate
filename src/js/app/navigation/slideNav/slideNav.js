@@ -19,7 +19,7 @@ define(function (require) {
         className: 'slide-nav',
 
         events: {
-
+            'tap .nav-closer': 'navSlide'
         },
 
         initialize: function() {
@@ -30,6 +30,12 @@ define(function (require) {
             this.$el.html(template());
 
             return this;
+        },
+
+        navSlide: function() {
+            // Add in overlay to close on body click
+            // Look into sliding this closed
+            $body.toggleClass('open');
         }
 
     });
