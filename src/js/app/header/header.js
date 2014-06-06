@@ -9,16 +9,16 @@ define(function (require) {
     var stateEvents = require('libs/stateEvents');
 
     // Template
-    var tpl = require('text!app/navTop/tpl/nav.html');
+    var tpl = require('text!app/header/tpl/nav.html');
     var template = _.template(tpl);
 
     var $body = $('body');
 
     return Backbone.View.extend({
 
-        tagName: 'nav',
+        tagName: 'header',
 
-        className: '',
+        className: 'bar bar-nav',
 
         events: {
             'tap .navbtn': 'navSlide',
@@ -49,3 +49,23 @@ define(function (require) {
     });
 
 });
+
+// Put in own view
+// <div class="nav transition">
+//     <div class="profile">
+//         <div class="portrait">
+//             <img src="assets/img/portrait_placeholder.png" alt="">
+//         </div>
+//         <h1>Chase Moody</h1>
+//     </div>
+//     <ul class="list">
+//         <li>
+//             <a href="#">Home</a>
+//         </li>
+//         <li>
+//             <a href="#test1">Test 1</a>
+//         </li>
+//     </ul>
+// </div>
+
+// <div class="nav-closer"></div>

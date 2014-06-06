@@ -3,7 +3,6 @@ require.config({
 	 	'jquery': 'vendor/jquery/dist/jquery.min',
 	    'backbone': 'vendor/backbone/backbone',
 	    'underscore': 'vendor/underscore/underscore',
-	    //'hammerjs': 'vendor/hammerjs/hammer.min',
 	    'hammerjs': 'vendor/jquery-hammerjs/jquery.hammer-full.min',
         'text' : 'vendor/requirejs-text/text',
 	    'app': 'app',

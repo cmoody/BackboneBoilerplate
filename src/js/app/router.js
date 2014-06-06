@@ -15,7 +15,7 @@ define(function(require) {
   // Collections
 
   // Views
-  var NavTopView = require('app/navTop/navTop');
+  var NavTopView = require('app/header/header');
   var HomeView = require('app/home/home');
 
   var Test1View = require('app/test1/test1');
@@ -42,7 +42,7 @@ define(function(require) {
     index: function() {
       var homeView = new HomeView();
 
-      stateEvents.trigger("update:title", "Home");
+      stateEvents.trigger("update:title", "Home"); // Maybe move into ViewHandler?
 
       ViewHandler.setCurrent(homeView);
     },
