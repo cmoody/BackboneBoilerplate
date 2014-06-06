@@ -15,7 +15,9 @@ define(function(require) {
   // Collections
 
   // Views
-  var NavTopView = require('app/header/header');
+  var HeaderView = require('app/header/header');
+  var FooterView = require('app/footer/footer');
+
   var HomeView = require('app/home/home');
 
   var Test1View = require('app/test1/test1');
@@ -29,14 +31,22 @@ define(function(require) {
     },
 
     initialize: function() {
-      this.addTopNav(); // If Auth needed move into viewHandler
+      this.addHeader(); // If Auth needed move into viewHandler
+      this.addFooter();
     },
 
-    addTopNav: function() {
-      var navTopView = new NavTopView();
+    addHeader: function() {
+      var headerView = new HeaderView();
 
       $body
-        .prepend(navTopView.$el);
+        .prepend(headerView.$el);
+    },
+
+    addFooter: function() {
+      var footerView = new FooterView();
+
+      $body
+        .prepend(footerView.$el);
     },
 
     index: function() {
