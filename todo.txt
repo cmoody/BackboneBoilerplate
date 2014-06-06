@@ -4,12 +4,11 @@ To DO
 
 = Nav
  - Trigger for deep link with childview < swap with =
- - User profile in nav
- - Nav link styles
- - Animation for profile/links when nav open
- - Move animations from TipCalculator into boilerplate
 
 = Page Transition
  - Add to viewHandler
  - Add transition in/out
  - Keep copy of view to prevent rerendering
+
+= Footer Navigation
+ - Swap highlighting for each view

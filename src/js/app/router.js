@@ -21,14 +21,17 @@ define(function(require) {
 
   var HomeView = require('app/home/home');
 
+  // Test Views
   var Test1View = require('app/test1/test1');
+  var SubHeaderTestView = require('app/subHeaderTest/subHeaderTest');
     
   return Backbone.Router.extend({
 
     routes: {
 		  '': 'index',
       '/': 'index',
-      'test1': 'test1'
+      'test1': 'test1',
+      'subheadertest': 'subHeaderTest'
     },
 
     initialize: function() {
@@ -72,6 +75,14 @@ define(function(require) {
       stateEvents.trigger("update:title", "Test 1");
 
       ViewHandler.setCurrent(test1View);
+    },
+
+    subHeaderTest: function() {
+      var subHeaderTestView = new SubHeaderTestView();
+
+      stateEvents.trigger("update:title", "SubHeader Test");
+
+      ViewHandler.setCurrent(subHeaderTestView);
     }
 
   });

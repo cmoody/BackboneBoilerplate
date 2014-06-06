@@ -41,8 +41,6 @@ define(function (require) {
         },
 
         navSlide: function() {
-            // Add in overlay to close on body click
-            // Look into sliding this closed
             $body.toggleClass('open');
         }
 
