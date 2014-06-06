@@ -9,16 +9,14 @@ define(function (require) {
     var stateEvents = require('libs/stateEvents');
 
     // Template
-    var tpl = require('text!app/footer/tpl/nav.html');
+    var tpl = require('text!app/navigation/slideNav/tpl/nav.html');
     var template = _.template(tpl);
 
     var $body = $('body');
 
     return Backbone.View.extend({
 
-        tagName: 'nav',
-
-        className: 'bar bar-tab',
+        className: 'slide-nav',
 
         events: {
 

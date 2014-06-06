@@ -9,7 +9,7 @@ define(function (require) {
     var stateEvents = require('libs/stateEvents');
 
     // Template
-    var tpl = require('text!app/header/tpl/nav.html');
+    var tpl = require('text!app/navigation/header/tpl/nav.html');
     var template = _.template(tpl);
 
     var $body = $('body');
@@ -49,23 +49,3 @@ define(function (require) {
     });
 
 });
-
-// Put in own view
-// <div class="nav transition">
-//     <div class="profile">
-//         <div class="portrait">
-//             <img src="assets/img/portrait_placeholder.png" alt="">
-//         </div>
-//         <h1>Chase Moody</h1>
-//     </div>
-//     <ul class="list">
-//         <li>
-//             <a href="#">Home</a>
-//         </li>
-//         <li>
-//             <a href="#test1">Test 1</a>
-//         </li>
-//     </ul>
-// </div>
-
-// <div class="nav-closer"></div>

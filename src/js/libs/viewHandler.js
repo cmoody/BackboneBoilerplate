@@ -31,6 +31,8 @@ define(function(require) {
       'outReverse': ''
     };
 
+    // Child Views
+    // http://stackoverflow.com/questions/7379263/disposing-of-view-and-model-objects-in-backbone-js
   	var ViewHandler = {
 		//http://stackoverflow.com/questions/17634769/page-transitions-with-requirejs-and-backbone-js
   		// Maybe use above for transitions to childviews only

@@ -15,8 +15,9 @@ define(function(require) {
   // Collections
 
   // Views
-  var HeaderView = require('app/header/header');
-  var FooterView = require('app/footer/footer');
+  var HeaderView = require('app/navigation/header/header');
+  var FooterView = require('app/navigation/footer/footer');
+  var SlideNavView = require('app/navigation/slideNav/slideNav');
 
   var HomeView = require('app/home/home');
 
@@ -33,6 +34,7 @@ define(function(require) {
     initialize: function() {
       this.addHeader(); // If Auth needed move into viewHandler
       this.addFooter();
+      this.addSlideNav();
     },
 
     addHeader: function() {
@@ -47,6 +49,13 @@ define(function(require) {
 
       $body
         .prepend(footerView.$el);
+    },
+
+    addSlideNav: function() {
+      var slideNavView = new SlideNavView();
+
+      $body
+        .prepend(slideNavView.$el);
     },
 
     index: function() {
