@@ -4,7 +4,7 @@ define(function(require) {
 	// Libs
 	var $ = require('jquery');
 	var Backbone = require('backbone');
-	var Onboard = require('libs/onboard');
+	var Onboard = require('libs/onboardLib');
 
 	// Template
     var tpl = require('text!app/onboard/tpl/index.html');

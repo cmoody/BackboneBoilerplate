@@ -15,14 +15,13 @@ define(function(require) {
   
   // Collections
 
-  // Views
   // Navigation Views
   var HeaderView = require('app/navigation/header/header');
   var FooterView = require('app/navigation/footer/footer');
   var SlideNavView = require('app/navigation/slideNav/slideNav');
 
   // Page Views
-  var OnboardView = require('app/onboard/onboard');
+  //var OnboardView = require('app/onboard/onboard');
   var HomeView = require('app/home/home');
   var MapView = require('app/map/map');
 
