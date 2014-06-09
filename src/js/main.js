@@ -5,6 +5,7 @@ require.config({
 	    'underscore': 'vendor/underscore/underscore',
 	    'hammerjs': 'vendor/jquery-hammerjs/jquery.hammer-full.min',
         'text' : 'vendor/requirejs-text/text',
+        'parse': 'http://www.parsecdn.com/js/parse-1.2.18.min',
 	    'app': 'app',
         'libs': 'libs'
     },

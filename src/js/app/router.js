@@ -2,23 +2,27 @@ define(function(require) {
 
   "use strict";
 
-  // Libs
+  // Vendor
   var $ = require('jquery');
   var Backbone = require('backbone');
-  var ViewHandler = require('libs/viewHandler');
-  var stateEvents = require('libs/stateEvents');
 
-  // Main Container
+  // Libs
+  var ViewHandler = require('libs/viewHandler');
+
+  // Elements
   var $body = $("body");
   var $content = $(".content");
   
   // Collections
 
   // Views
+  // Navigation Views
   var HeaderView = require('app/navigation/header/header');
   var FooterView = require('app/navigation/footer/footer');
   var SlideNavView = require('app/navigation/slideNav/slideNav');
 
+  // Page Views
+  var OnboardView = require('app/onboard/onboard');
   var HomeView = require('app/home/home');
 
   // Test Views
@@ -35,10 +39,28 @@ define(function(require) {
     },
 
     initialize: function() {
+      // Add events to these to add logged in class from onboard
       this.addHeader(); // If Auth needed move into viewHandler
       this.addFooter();
       this.addSlideNav();
+
+      // if(this.currentUser) {
+      //   $('.bar-nav, .bottom-nav').addClass('logged-in');
+      // }else{
+      //   this.onboard();
+      // }
     },
+
+    // isLoggedIn: function(view) {
+    //   if(this.currentUser) {
+    //     // Is logged in
+    //     //callback();
+    //     ViewHandler.setCurrent(view);
+    //   }else{
+    //     // Isnt logged in
+    //     this.onboard();
+    //   }
+    // },
 
     addHeader: function() {
       var headerView = new HeaderView();
@@ -64,25 +86,19 @@ define(function(require) {
     index: function() {
       var homeView = new HomeView();
 
-      stateEvents.trigger("update:title", "Home"); // Maybe move into ViewHandler?
-
-      ViewHandler.setCurrent(homeView);
+      ViewHandler.setCurrent(homeView, "Home");
     },
 
     test1: function() {
       var test1View = new Test1View();
 
-      stateEvents.trigger("update:title", "Test 1");
-
-      ViewHandler.setCurrent(test1View);
+      ViewHandler.setCurrent(test1View, "Test 1");
     },
 
     subHeaderTest: function() {
       var subHeaderTestView = new SubHeaderTestView();
 
-      stateEvents.trigger("update:title", "SubHeader Test");
-
-      ViewHandler.setCurrent(subHeaderTestView);
+      ViewHandler.setCurrent(subHeaderTestView, "SubHeader Test");
     }
 
   });
