@@ -12,3 +12,4 @@ To DO
 
 = Footer Navigation
  - Swap highlighting for each view
+ - Fix offscreen icons

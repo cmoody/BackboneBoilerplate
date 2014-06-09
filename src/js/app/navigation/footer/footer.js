@@ -16,12 +16,11 @@ define(function (require) {
 
     return Backbone.View.extend({
 
-        tagName: 'nav',
-
-        className: 'bar bar-tab',
+        className: 'footer',
 
         events: {
-
+            'tap .menu': 'openMenu',
+            //'tap .tab-item': 'closeMenu'
         },
 
         initialize: function() {
@@ -32,6 +31,25 @@ define(function (require) {
             this.$el.html(template());
 
             return this;
+        },
+
+        openMenu: function(e) {
+            // e.preventDefault();
+            // e.stopPropagation();
+            // e.gesture.stopPropagation();
+            // e.gesture.preventDefault();
+
+            this.$el.toggleClass('open');
+        },
+
+        closeMenu: function(e) {
+            stateEvents.trigger("change:navigation");
+            // e.preventDefault();
+            // e.stopPropagation();
+            // e.gesture.stopPropagation();
+            // e.gesture.preventDefault();
+
+            this.$el.removeClass('open');
         }
 
     });
