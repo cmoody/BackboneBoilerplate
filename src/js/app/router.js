@@ -24,6 +24,7 @@ define(function(require) {
   // Page Views
   var OnboardView = require('app/onboard/onboard');
   var HomeView = require('app/home/home');
+  var MapView = require('app/map/map');
 
   // Test Views
   var Test1View = require('app/test1/test1');
@@ -34,6 +35,8 @@ define(function(require) {
     routes: {
 		  '': 'index',
       '/': 'index',
+      'onboard': 'onboard',
+      'map': 'map',
       'test1': 'test1',
       'subheadertest': 'subHeaderTest'
     },
@@ -83,10 +86,22 @@ define(function(require) {
         .prepend(slideNavView.$el);
     },
 
+    onboard: function() {
+      // Not logged in routes to this
+      // Onboard view can trigger events to hide header/footer
+    },
+
     index: function() {
       var homeView = new HomeView();
 
       ViewHandler.setCurrent(homeView, "Home");
+    },
+
+    map: function() {
+      var mapView = new MapView();
+
+      ViewHandler.setCurrent(mapView, "Map");
+      mapView.render();
     },
 
     test1: function() {
