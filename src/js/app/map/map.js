@@ -23,6 +23,13 @@ define(function(require) {
 
 		render: function() {
 			Gmap.init(this.$('#map_holder'));
+
+			navigator.geolocation.getCurrentPosition(function(position) {
+				Gmap.updateCenter(position);
+			},
+			function() {
+				console.log("Error");
+			});
 			
 			return this;
 		}
