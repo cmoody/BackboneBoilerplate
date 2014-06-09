@@ -2,11 +2,20 @@ define(function(require) {
 
   	"use strict";
 
+  	// Vendor
   	var $ = require('jquery');
   	var Backbone = require('backbone');
+
+  	// Libs
+  	var stateEvents = require('libs/stateEvents');
+
+  	// Elements
   	var $content = $(".content");
+
+  	// Other
   	var currentView;
 
+  	// Adds Close to Backbone Views
 	Backbone.View.prototype.close = function(){
 		this.remove();
 		this.unbind();
@@ -38,7 +47,11 @@ define(function(require) {
   		// Maybe use above for transitions to childviews only
   		// then its all based on triggers and no need to update url and remove parentview since will be returning
   		// Only handles one level deep still causes url update for link within
-  		setCurrent: function(view) {
+  		setCurrent: function(view, title) {
+  			if(title) {
+  				stateEvents.trigger("update:title", title);
+  			}
+
   			// Call property on view for in/out
   			// currentView.onExit then on complete close
   			// view.onEnter
