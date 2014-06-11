@@ -21,7 +21,7 @@ define(function(require) {
   var SlideNavView = require('app/navigation/slideNav/slideNav');
 
   // Page Views
-  //var OnboardView = require('app/onboard/onboard');
+  var OnboardView = require('app/onboard/onboard');
   var HomeView = require('app/home/home');
   var MapView = require('app/map/map');
 
@@ -41,28 +41,10 @@ define(function(require) {
     },
 
     initialize: function() {
-      // Add events to these to add logged in class from onboard
-      this.addHeader(); // If Auth needed move into viewHandler
+      this.addHeader();
       this.addFooter();
       this.addSlideNav();
-
-      // if(this.currentUser) {
-      //   $('.bar-nav, .bottom-nav').addClass('logged-in');
-      // }else{
-      //   this.onboard();
-      // }
     },
-
-    // isLoggedIn: function(view) {
-    //   if(this.currentUser) {
-    //     // Is logged in
-    //     //callback();
-    //     ViewHandler.setCurrent(view);
-    //   }else{
-    //     // Isnt logged in
-    //     this.onboard();
-    //   }
-    // },
 
     addHeader: function() {
       var headerView = new HeaderView();
@@ -86,8 +68,9 @@ define(function(require) {
     },
 
     onboard: function() {
-      // Not logged in routes to this
-      // Onboard view can trigger events to hide header/footer
+      var onboardView = new OnboardView();
+
+      ViewHandler.setCurrent(onboardView);
     },
 
     index: function() {

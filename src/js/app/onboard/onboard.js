@@ -4,14 +4,13 @@ define(function(require) {
 	// Libs
 	var $ = require('jquery');
 	var Backbone = require('backbone');
-	var Onboard = require('libs/onboardLib');
+	//var Onboard = require('libs/onboardLib');
 
 	// Template
     var tpl = require('text!app/onboard/tpl/index.html');
     var template = _.template(tpl);
 
-	// Sub-Views
-
+	// On successful sign up or login run event to add logged in to body
 	return Backbone.View.extend({
 		className: 'onboard',
 
@@ -103,14 +102,14 @@ define(function(require) {
 			if(this.isBand) {
 				console.log("Go to band part");
 			}else{
-				Onboard.signup(email, password,
-					function(user) {
-						window.location.hash = "home";
-					},
-					function(user, error) {
-						$error.html(error.message);
-					}
-				);
+				// Onboard.signup(email, password,
+				// 	function(user) {
+				// 		window.location.hash = "home";
+				// 	},
+				// 	function(user, error) {
+				// 		$error.html(error.message);
+				// 	}
+				// );
 			}
 		},
 
@@ -118,9 +117,9 @@ define(function(require) {
 			var username = $('#username-login').val();
 			var password = $('#password-login').val();
 
-			Onboard.login(username,password, function() {
-				window.location.hash = "home";
-			});
+			// Onboard.login(username,password, function() {
+			// 	window.location.hash = "home";
+			// });
 		}
 	});
 

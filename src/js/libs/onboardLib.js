@@ -40,7 +40,7 @@ define(function(require) {
   	},
 
   	getCurrentUser: function() {
-
+      // Also checks to see if logged in
   	},
 
   	logOut: function() {
