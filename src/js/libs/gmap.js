@@ -33,10 +33,30 @@ define(function (require) {
 
         updateCenter: function(position) {
             // Create zoom in
-            this.userMap.setZoom(16);
+            //this.userMap.setZoom(16);
             this.userMap.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
         
             this.addMyMarker(position);
+
+            this.smoothZoom();
+        },
+
+        smoothZoom: function() {
+            var cnt = this.userMap.getZoom();
+            var level = 16;
+            var self = this;
+
+
+            if (cnt >= level) {
+                return;
+            }else{
+                var z = google.maps.event.addListener(self.userMap, 'zoom_changed', function(event){
+                    google.maps.event.removeListener(z);
+                    self.smoothZoom(self.userMap, level, cnt + 1, true);
+                });
+                
+                setTimeout(function(){self.userMap.setZoom(cnt)}, 80);
+            }
         },
 
         // Take in data set and add to map

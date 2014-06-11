@@ -5,7 +5,6 @@ define(function(require) {
 	var $ = require('jquery');
 	var Backbone = require('backbone');
 	var Gmap = require('libs/gmap');
-	var stateEvents = require('libs/stateEvents');
 
 	// Template
     var template = _.template($('#tpl').html()); // Kept in index.html
@@ -14,10 +13,6 @@ define(function(require) {
 		className: 'map',
 
 		initialize: function() {
-			//stateEvents.trigger("change:navigation:secondary");
-			// Destroy on route change?
-			// Alternative is to position element in corner so click event is on this view
-
 			this.$el.html(template());
 		},
 

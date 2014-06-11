@@ -7,7 +7,7 @@ define(function(require) {
 
   var onboard = {
   	signup: function(username, password, callback, errorCallback) {		 
-		Parse.User.signUp(username, password, { ACL: new Parse.ACL() }, {
+		  Parse.User.signUp(username, password, { ACL: new Parse.ACL() }, {
         success: function(user) {
           callback(user);
         },
@@ -20,15 +20,15 @@ define(function(require) {
 
   	login: function(username, password, callback) {
   		Parse.User.logIn(username,password, {
-		  success: function(user) {
-		    // Do stuff after successful login.
-		    callback();
-		  },
-		  error: function(user, error) {
-		    // The login failed. Check error to see why.
-		    console.log("Error: " + error.code + " " + error.message);
-		  }
-		});
+  		  success: function(user) {
+  		    // Do stuff after successful login.
+  		    callback();
+  		  },
+  		  error: function(user, error) {
+  		    // The login failed. Check error to see why.
+  		    console.log("Error: " + error.code + " " + error.message);
+  		  }
+		  });
   	},
 
   	signupFacebook: function() {
