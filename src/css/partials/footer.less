@@ -16,8 +16,16 @@
 
 .footer {
 	// Default Hidden
-	// -webkit-transform: translate3d(0, 50px, 0);
-	// 		transform: translate3d(0, 50px, 0);
+	.bar-tab {
+		-webkit-transform: translate3d(0, 50px, 0);
+				transform: translate3d(0, 50px, 0);
+	}
+	&.is-logged-in {
+		.bar-tab {
+	    	-webkit-transform: translate3d(0, 0px, 0);
+	        		transform: translate3d(0, 0px, 0);
+	    }
+    }
 	.overlay {
 		background-color: #fff;
 		position: fixed;

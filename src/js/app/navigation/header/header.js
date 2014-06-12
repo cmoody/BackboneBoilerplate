@@ -31,6 +31,10 @@ define(function (require) {
                 this.$el.find('.title').html(title);
             }, this);
 
+            stateEvents.on("isLoggedIn", function() {
+                this.$el.addClass('is-logged-in');
+            }, this);
+
             this.render();
         },
 

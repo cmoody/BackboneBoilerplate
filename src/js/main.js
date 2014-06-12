@@ -14,8 +14,9 @@ require.config({
 
 require([
 	'app/router',
+	'libs/stateEvents',
 	'libs/delegateEvents'
-], function(Router) {
+], function(Router, stateEvents) {
 	var currentUser = true; // Replace with onboardLib.getCurrentUser();
 
 	var appRouter = new Router();
@@ -23,13 +24,14 @@ require([
 
 	if(currentUser) {
 		// trigger event to add logged in
+		stateEvents.trigger("isLoggedIn");
 
 		appRouter.navigate('', true);
 	}else{
 		appRouter.navigate('onboard', true);
 
 		// On error for parse sends user back to /onboard
-		// $('body').addClass('is-logged-in');
+		// stateEvents.trigger("isLoggedIn");
 	}
 
 });

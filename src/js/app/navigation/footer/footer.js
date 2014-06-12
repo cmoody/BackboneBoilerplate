@@ -24,6 +24,10 @@ define(function (require) {
         },
 
         initialize: function() {
+            stateEvents.on("isLoggedIn", function() {
+                this.$el.addClass('is-logged-in');
+            }, this);
+            
             this.render();
         },
 
