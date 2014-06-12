@@ -3,6 +3,7 @@ define(function(require) {
   "use strict";
 
   var Parse = require('parse');
+  var stateEvents = require('libs/stateEvents');
   Parse.initialize("", "");
 
   var onboard = {
@@ -22,6 +23,7 @@ define(function(require) {
   		Parse.User.logIn(username,password, {
   		  success: function(user) {
   		    // Do stuff after successful login.
+          stateEvents.trigger("isLoggedIn");
   		    callback();
   		  },
   		  error: function(user, error) {
@@ -40,12 +42,16 @@ define(function(require) {
   	},
 
   	getCurrentUser: function() {
-      // Also checks to see if logged in
+      
   	},
 
   	logOut: function() {
   		Parse.User.logOut();
-  	}
+  	},
+
+    onError: function() {
+
+    }
   };
 
   return onboard;

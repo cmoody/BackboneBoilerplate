@@ -17,7 +17,7 @@ require([
 	'libs/stateEvents',
 	'libs/delegateEvents'
 ], function(Router, stateEvents) {
-	var currentUser = true; // Replace with onboardLib.getCurrentUser();
+	var currentUser = false; // Replace with onboardLib.getCurrentUser();
 
 	var appRouter = new Router();
 	Backbone.history.start();
@@ -31,7 +31,6 @@ require([
 		appRouter.navigate('onboard', true);
 
 		// On error for parse sends user back to /onboard
-		// stateEvents.trigger("isLoggedIn");
 	}
 
 });

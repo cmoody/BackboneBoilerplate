@@ -1,1 +1,25 @@
-// Add logged in class here
+.onboard {
+	height: 100%;
+	overflow: hidden;
+	.section {
+		transition: all 0.2s linear;
+		background-color: #f7f7f7;
+		overflow-y: scroll;
+		padding-bottom: 40px;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	.options {
+		-webkit-transform: translate3d(0, 0, 0);
+	}
+	.create-email {
+		-webkit-transform: translate3d(100%, 0, 0);
+	}
+	.login {
+		-webkit-transform: translate3d(100%, 0, 0);
+	}
+	.active {
+		-webkit-transform: translate3d(0%, 0, 0);
+	}
+}
