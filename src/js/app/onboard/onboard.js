@@ -6,7 +6,7 @@ define(function(require) {
 	var Backbone = require('backbone');
 
 	// Libs
-	//var Onboard = require('libs/onboardLib');
+	var Onboard = require('libs/onboardLib');
 	var stateEvents = require('libs/stateEvents');
 
 	// Template
@@ -21,6 +21,7 @@ define(function(require) {
 			'tap .btn-login': 'loginPage',
 			'tap .btn-sign-up': 'signUpPage',
 			'tap .verify-login': 'verifyLogin',
+			'tap .verify-sign-up': 'verifySignUp',
 			'tap .back': 'goBack'
 		},
 
@@ -47,19 +48,33 @@ define(function(require) {
 		},
 
 		verifyLogin: function() {
-			console.log("Submit Login");
+			var username = this.$('.username-login').val();
+			var password = this.$('.password-login').val();
 
-			stateEvents.trigger("isLoggedIn");
+			if(username && password) {
+				Onboard.login(username, password, function() {
+					stateEvents.trigger("isLoggedIn");
 
-			window.location = '#';
+					window.location = '#';
+				});
+			}else{
+				console.log("Error");
+			}
 		},
 
 		verifySignUp: function() {
-			console.log("Submit Sign Up");
+			// Add validation
+			var username = this.$('.username').val();
+			var password = this.$('.password').val();
 
-			stateEvents.trigger("isLoggedIn");
+			Onboard.signup(username, password, function() {
+				stateEvents.trigger("isLoggedIn");
 
-			window.location = '#';
+				window.location = '#';
+			},
+			function() {
+				console.log("Error");
+			});
 		}
 
 	});
