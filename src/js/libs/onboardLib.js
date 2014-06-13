@@ -15,7 +15,7 @@ define(function(require) {
       // if(err) {
       //   errorCallback();
       // }
-      
+
 		  // Parse.User.signUp(username, password, { ACL: new Parse.ACL() }, {
     //     success: function(user) {
     //       callback(user);
@@ -44,12 +44,12 @@ define(function(require) {
 		  // });
   	},
 
-  	signupFacebook: function() {
-
+  	signupFacebook: function(callback) {
+      callback();
   	},
 
-  	loginFacebook: function() {
-
+  	loginFacebook: function(callback) {
+      callback();
   	},
 
   	getCurrentUser: function() {

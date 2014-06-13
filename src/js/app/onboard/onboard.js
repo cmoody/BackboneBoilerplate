@@ -22,6 +22,8 @@ define(function(require) {
 			'tap .btn-sign-up': 'signUpPage',
 			'tap .verify-login': 'verifyLogin',
 			'tap .verify-sign-up': 'verifySignUp',
+			'tap .verify-login-facebook': 'loginFacebook',
+			'tap .verify-sign-up-facebook': 'signUpFacebook',
 			'tap .back': 'goBack'
 		},
 
@@ -74,6 +76,22 @@ define(function(require) {
 			},
 			function() {
 				console.log("Error");
+			});
+		},
+
+		loginFacebook: function() {
+			Onboard.loginFacebook(function() {
+				stateEvents.trigger("isLoggedIn");
+
+				window.location = '#';
+			});
+		},
+
+		signUpFacebook: function() {
+			Onboard.signupFacebook(function() {
+				stateEvents.trigger("isLoggedIn");
+
+				window.location = '#';
 			});
 		}
 
