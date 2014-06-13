@@ -3,7 +3,6 @@ define(function(require) {
   "use strict";
 
   //var Parse = require('parse');
-  var stateEvents = require('libs/stateEvents');
   //Parse.initialize("", "");
 
   var onboard = {

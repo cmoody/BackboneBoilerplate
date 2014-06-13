@@ -58,6 +58,7 @@ define(function(require) {
 					stateEvents.trigger("isLoggedIn");
 
 					window.location = '#';
+					//window.location.hash = "home"; // Use this instead?
 				});
 			}else{
 				console.log("Error");
