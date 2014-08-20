@@ -15,3 +15,14 @@ To DO
  - Fix offscreen icons
 
 = Site Tour
+
+= Shake for tweaks
+	- Shake to show settings (create lib included in main.js)
+	window.addEventListener('shake', function() {
+	      tweaksView.open();
+	    }, false);
+	https://github.com/alexgibson/shake.js/
+
+= Bower
+	- Maybe move libs to bower components pointing to my github repos
+	- Should help with syncing

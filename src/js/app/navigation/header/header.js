@@ -6,6 +6,8 @@ define(function (require) {
     var $ = require('jquery');
     var _ = require('underscore');
     var Backbone = require('backbone');
+
+    // Libs
     var stateEvents = require('libs/stateEvents');
 
     // Template

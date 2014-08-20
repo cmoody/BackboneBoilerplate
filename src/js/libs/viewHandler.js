@@ -1,21 +1,21 @@
 define(function(require) {
 
-  	"use strict";
+	"use strict";
 
-  	// Vendor
-  	var $ = require('jquery');
-  	var Backbone = require('backbone');
+	// Vendor
+	var $ = require('jquery');
+	var Backbone = require('backbone');
 
-  	// Libs
-  	var stateEvents = require('libs/stateEvents');
+	// Libs
+	var stateEvents = require('libs/stateEvents');
 
-  	// Elements
-  	var $content = $(".content");
+	// Elements
+	var $content = $(".content");
 
-  	// Other
-  	var currentView;
+	// Other
+	var currentView;
 
-  	// Adds Close to Backbone Views
+  // Adds Close to Backbone Views
 	Backbone.View.prototype.close = function(){
 		this.remove();
 		this.unbind();
